@@ -7,6 +7,7 @@ import './App.css';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
   const getMovieRequest = async () => {
     const url = `http://www.omdbapi.com/?s=star wars&apikey=fae05d5a`;
@@ -26,8 +27,8 @@ const App = () => {
   return (
     <div className='container-fluid movie-app'>
       <div>
-        <MovieListHeading />
-        <SearchBox />
+        <MovieListHeading heading='Mii Movies' />
+        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className='row'>
           <MovieList movies={movies} />
