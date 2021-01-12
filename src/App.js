@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MovieList from './components/MovieList/MovieList';
 import MovieListHeading from './components/MovieListHeading/MovieListHeading';
 import SearchBox from './components/SearchBox/SearchBox';
-import AddFavorites from './components/AddFavorites/AddFavorites';
+import AddFavorites from './components/AddFavorite/AddFavorite';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
