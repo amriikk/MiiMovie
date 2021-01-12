@@ -41,7 +41,14 @@ const App = () => {
           <MovieList 
             movies={movies} 
             favoriteComponent={AddFavorite}
-            handleFavoriteClick={AddFavoriteMovie} />
+            handleFavoritesClick={AddFavoriteMovie} 
+          />
+      </div>
+      <div className='row d-flex align-items-center mt-4 mb-4'>
+        <MovieListHeading heading='Mii Favorites' />
+      </div>
+      <div className='row'> 
+        <MovieList movies={favorites} favoriteComponent={AddFavorite} />
       </div>
     </div>
   );
