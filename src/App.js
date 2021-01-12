@@ -22,9 +22,9 @@ const App = () => {
     }
   };
 
-  const AddFavorites = (movie) => {
-		const newFavouriteList = [...favourites, movie];
-		setFavourites(newFavouriteList);
+  const AddFavoriteMovie = (movie) => {
+		const newFavoriteList = [...favorites, movie];
+		setFavorites(newFavoriteList);
   };
   
   useEffect( () => {
@@ -38,7 +38,10 @@ const App = () => {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className='row'>
-          <MovieList movies={movies} favoriteComponent={AddFavorite} />
+          <MovieList 
+            movies={movies} 
+            favoriteComponent={AddFavorite}
+            handleFavoriteClick={AddFavoriteMovie} />
       </div>
     </div>
   );
