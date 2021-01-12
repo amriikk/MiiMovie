@@ -9,6 +9,7 @@ import './App.css';
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [favourites, setFavourites] = useState([]);
 
   const getMovieRequest = async () => {
 		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
@@ -21,6 +22,11 @@ const App = () => {
     }
   };
 
+  const AddFavorites = (movie) => {
+		const newFavouriteList = [...favourites, movie];
+		setFavourites(newFavouriteList);
+  };
+  
   useEffect( () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
