@@ -3,6 +3,7 @@ import MovieList from './components/MovieList/MovieList';
 import MovieListHeading from './components/MovieListHeading/MovieListHeading';
 import SearchBox from './components/SearchBox/SearchBox';
 import AddFavorite from './components/AddFavorite/AddFavorite';
+import RemoveFavorite from "./components/RemoveFavorite/RemoveFavorite";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
