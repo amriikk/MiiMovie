@@ -28,10 +28,12 @@ const App = () => {
 		setFavorites(newFavoriteList);
   };
   
-  const RemoveFavoriteMovie = () => {
+  const removeFavoriteMovie = (movie) => {
     const newFavoriteList = favorites.filter(
-      (favorite) => favorites.imdbID !== movie.imdbID
+      (favorite) => favorite.imdbID !== movie.imdbID
     );
+
+    setFavorites(newFavoriteList);
   };
 
   useEffect( () => {
@@ -45,11 +47,11 @@ const App = () => {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className='row'>
-          <MovieList 
-            movies={movies} 
-            favoriteComponent={AddFavorite}
-            handleFavoritesClick={AddFavoriteMovie} 
-          />
+        <MovieList 
+          movies={movies} 
+          favoriteComponent={AddFavorite}
+          handleFavoritesClick={AddFavoriteMovie} 
+        />
       </div>
       <div className='row d-flex align-items-center mt-4 mb-4'>
         <MovieListHeading heading='Mii Favorites' />
@@ -57,7 +59,7 @@ const App = () => {
       <div className='row'> 
         <MovieList 
           movies={favorites} 
-          favoriteComponent={AddFavorite} 
+          handleFavoritesClick={removeFavoriteMovie} 
           favoriteComponent={RemoveFavorite}
         />
       </div>
