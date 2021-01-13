@@ -28,6 +28,12 @@ const App = () => {
 		setFavorites(newFavoriteList);
   };
   
+  const RemoveFavoriteMovie = () => {
+    const newFavoriteList = favorites.filter(
+      (favorite) => favorites.imdbID !== movie.imdbID
+    );
+  };
+
   useEffect( () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
