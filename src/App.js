@@ -55,7 +55,11 @@ const App = () => {
         <MovieListHeading heading='Mii Favorites' />
       </div>
       <div className='row'> 
-        <MovieList movies={favorites} favoriteComponent={AddFavorite} />
+        <MovieList 
+          movies={favorites} 
+          favoriteComponent={AddFavorite} 
+          favoriteComponent={RemoveFavorite}
+        />
       </div>
     </div>
   );
