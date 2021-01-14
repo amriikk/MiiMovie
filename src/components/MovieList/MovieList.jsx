@@ -11,7 +11,7 @@ const MovieList = (props) => {
                         <img src={movie.Poster} alt='movie'></img>
                         <div
                             onClick={() => props.handleFavoritesClick(movie)} 
-                            className='overlay d-flex align-items-center justify-content-center'>
+                            className='overlay d-flex align-items-center justify-content-center' >
                             <FavoriteComponent />
                         </div>
                     </div>
