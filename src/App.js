@@ -22,7 +22,11 @@ const App = () => {
       setMovies(responseJson.Search);
     }
   };
-
+  
+  useEffect( () => {
+    getMovieRequest(searchValue);
+  }, [searchValue]);
+  
   const AddFavoriteMovie = (movie) => {
 		const newFavoriteList = [...favorites, movie];
 		setFavorites(newFavoriteList);
@@ -36,9 +40,6 @@ const App = () => {
     setFavorites(newFavoriteList);
   };
 
-  useEffect( () => {
-    getMovieRequest(searchValue);
-  }, [searchValue]);
 
   return (
     <div className='container-fluid movie-app'>
