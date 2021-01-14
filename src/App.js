@@ -26,10 +26,23 @@ const App = () => {
   useEffect( () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
+
+  useEffect( () => {
+    const movieFavorites =JSON.parse(
+      localStorage.getItem('react-movie-app-favorites')
+    );
+
+    setFavorites(movieFavorites);
+  }, []);
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('react-movie-app-favorites', JSON.stringify(items));
+  };
   
   const AddFavoriteMovie = (movie) => {
 		const newFavoriteList = [...favorites, movie];
-		setFavorites(newFavoriteList);
+    setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList);
   };
   
   const removeFavoriteMovie = (movie) => {
